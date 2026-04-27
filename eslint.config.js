@@ -9,8 +9,8 @@ import globals from 'globals'
 import tseslint from 'typescript-eslint'
 
 const importSortGroups = [
-  ['^react$', '^react/.+$', '^react-dom$', '^react-dom/.+$'],
-  ['^@?\\w'],
+  ['^react(?:/.+)?(?:\\u0000)?$', '^react-dom(?:/.+)?(?:\\u0000)?$'],
+  ['^(?!(?:react(?:/.+)?|react-dom(?:/.+)?)(?:\\u0000)?$)@?\\w'],
   [
     '^@/',
     '^\\.(?!/?(?:.*\\.(?:css|scss|sass|less|svg|png|jpe?g|gif|webp|avif)$)).+',

@@ -1,0 +1,126 @@
+@theme {
+  --font-sans: 'Fixel', 'Inter', 'Segoe UI', sans-serif;
+  --font-display: 'Fixel', 'Inter', 'Segoe UI', sans-serif;
+  --font-mono: 'SFMono-Regular', 'SF Mono', 'Consolas', monospace;
+
+  --color-brand-50: #eefbf4;
+  --color-brand-100: #dff6e8;
+  --color-brand-200: #c3ecd3;
+  --color-brand-300: #9ddfba;
+  --color-brand-400: #64c793;
+  --color-brand-500: #249c67;
+  --color-brand-600: #09824f;
+  --color-brand-700: #06673f;
+  --color-brand-800: #075235;
+  --color-brand-900: #083f2a;
+
+  --color-ink-950: #17213a;
+  --color-ink-800: #3d4962;
+  --color-ink-700: #5f6b85;
+  --color-ink-600: #7d879f;
+  --color-ink-500: #a6aebe;
+
+  --color-line-soft: #edf0f4;
+  --color-line-default: #d8dee7;
+  --color-line-strong: #c2cad7;
+
+  --color-surface-page: #ffffff;
+  --color-surface-muted: #f7f8fd;
+  --color-surface-banner: #effdf6;
+  --color-surface-disabled: #dbe2ed;
+
+  --shadow-card: 0 2px 10px rgba(23, 33, 58, 0.04);
+  --shadow-floating: 0 18px 50px rgba(23, 33, 58, 0.08);
+  --shadow-focus: 0 0 0 4px rgba(143, 242, 183, 0.45);
+
+  --radius-card: 20px;
+  --radius-control: 10px;
+  --radius-icon-button: 12px;
+  --radius-pill: 999px;
+
+  --breakpoint-xs: 30rem;
+  --breakpoint-3xl: 100rem;
+}
+
+:root {
+  --page-max-width: 1440px;
+  --page-padding-x: 24px;
+  --page-padding-y: 20px;
+  --section-gap: 56px;
+
+  --heading-display-size: 64px;
+  --heading-display-line: 1.02;
+  --heading-display-weight: 600;
+
+  --text-body-size: 16px;
+  --text-body-line: 1.52;
+  --text-body-weight: 400;
+  --text-label-size: 14px;
+  --text-label-weight: 500;
+
+  --button-height-md: 56px;
+  --button-padding-x: 20px;
+  --button-radius: var(--radius-control);
+  --button-font-size: 16px;
+  --button-font-weight: 600;
+  --button-primary-bg: var(--color-brand-600);
+  --button-primary-bg-hover: var(--color-brand-700);
+  --button-primary-fg: #ffffff;
+  --button-secondary-bg: #ffffff;
+  --button-secondary-fg: var(--color-ink-950);
+  --button-secondary-border: var(--color-line-default);
+  --button-disabled-bg: var(--color-surface-disabled);
+  --button-disabled-fg: var(--color-ink-500);
+
+  --control-height-md: 56px;
+  --control-padding-x: 18px;
+  --control-radius: var(--radius-control);
+  --control-border: var(--color-line-default);
+  --control-border-hover: var(--color-line-strong);
+  --control-bg: #ffffff;
+  --control-fg: var(--color-ink-950);
+  --control-placeholder: var(--color-ink-600);
+  --control-focus-ring: rgba(143, 242, 183, 0.45);
+  --control-focus-border: #8ff2b7;
+  --textarea-min-height: 280px;
+
+  --card-radius: var(--radius-card);
+  --card-bg: var(--color-surface-muted);
+  --card-banner-bg: var(--color-surface-banner);
+  --card-padding: 28px;
+
+  --icon-button-size: 48px;
+  --icon-button-radius: var(--radius-icon-button);
+  --icon-button-border: var(--color-line-default);
+  --icon-button-bg: #ffffff;
+  --icon-button-fg: var(--color-ink-800);
+
+  --progress-dot-width: 32px;
+  --progress-dot-height: 8px;
+  --progress-dot-radius: 999px;
+  --progress-dot-active: var(--color-ink-950);
+  --progress-dot-inactive: #d0d6de;
+}
+
+@media (width >= 48rem) {
+  :root {
+    --page-padding-x: 36px;
+    --page-padding-y: 24px;
+  }
+}
+
+@media (width >= 80rem) {
+  :root {
+    --page-padding-x: 60px;
+    --page-padding-y: 28px;
+  }
+}
+
+@media (width < 48rem) {
+  :root {
+    --heading-display-size: 48px;
+    --section-gap: 40px;
+    --textarea-min-height: 240px;
+    --progress-dot-width: 24px;
+  }
+}
