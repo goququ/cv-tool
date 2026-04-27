@@ -1,0 +1,49 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+dist-ssr/
+coverage/
+spec/
+
+# logs
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# environment files
+.env
+.env.*
+!.env.example
+*.local
+
+# editor directories and files
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# caches
+.cache/
+.parcel-cache/
+.turbo/
+
+# test artifacts
+playwright-report/
+test-results/
+
+# TypeScript
+*.tsbuildinfo
