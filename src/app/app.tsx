@@ -4,35 +4,18 @@ import { IconButton } from '@/shared/ui/icon-button/icon-button'
 import { Input } from '@/shared/ui/input/input'
 import { ProgressDots } from '@/shared/ui/progress-dots/progress-dots'
 import { Textarea } from '@/shared/ui/textarea/textarea'
-
-import copyIconSrc from '../assets/icons/copy.svg'
-import homeIconSrc from '../assets/icons/home.svg'
-import plusIconSrc from '../assets/icons/plus.svg'
-import repeatIconSrc from '../assets/icons/repeat.svg'
-import logoSrc from '../assets/logo.svg'
-
-function HomeIcon() {
-  return <img alt="" className="size-5" src={homeIconSrc} />
-}
-
-function PlusIcon() {
-  return <img alt="" className="size-5" src={plusIconSrc} />
-}
-
-function RegenerateIcon() {
-  return <img alt="" className="size-5" src={repeatIconSrc} />
-}
+import CopyIcon from '../assets/icons/copy.svg?react'
+import HomeIcon from '../assets/icons/home.svg?react'
+import PlusIcon from '../assets/icons/plus.svg?react'
+import RegenerateIcon from '../assets/icons/repeat.svg?react'
+import LogoSvg from '../assets/logo.svg?react'
 
 function App() {
   return (
     <main className="mx-auto flex min-h-screen w-full max-w-[var(--page-max-width)] flex-col px-[var(--page-padding-x)] py-[var(--page-padding-y)]">
       <header className="flex items-start justify-between gap-6 border-b border-[var(--color-line-soft)] pb-6">
         <div className="flex items-center gap-4">
-          <img alt="Alt+Shift" className="h-16 w-auto" src={logoSrc} />
-
-          <span className="text-[42px] leading-none font-semibold tracking-[-0.04em] text-[var(--color-ink-950)] sm:text-[54px]">
-            Alt+Shift
-          </span>
+          <LogoSvg aria-label="Alt+Shift" className="h-16 w-auto" role="img" />
         </div>
 
         <div className="flex items-center gap-5 pt-1">
@@ -45,7 +28,10 @@ function App() {
             </div>
           </div>
 
-          <IconButton aria-label="Go to dashboard" icon={<HomeIcon />} />
+          <IconButton
+            aria-label="Go to dashboard"
+            icon={<HomeIcon aria-hidden="true" className="size-5" />}
+          />
         </div>
       </header>
 
@@ -94,7 +80,7 @@ function App() {
 
           <Button fullWidth variant="secondary">
             <span className="inline-flex items-center gap-3">
-              <RegenerateIcon />
+              <RegenerateIcon aria-hidden="true" className="size-5" />
               Try Again
             </span>
           </Button>
@@ -131,7 +117,7 @@ function App() {
 
           <div className="flex items-center justify-end gap-3 pt-8 text-[18px] font-semibold text-[var(--color-ink-800)]">
             <span>Copy to clipboard</span>
-            <img alt="" className="size-6" src={copyIconSrc} />
+            <CopyIcon aria-hidden="true" className="size-6" />
           </div>
         </Card>
       </section>
@@ -153,7 +139,7 @@ function App() {
 
         <Button className="min-w-[244px]" size="lg">
           <span className="inline-flex items-center gap-3">
-            <PlusIcon />
+            <PlusIcon aria-hidden="true" className="size-5" />
             Create New
           </span>
         </Button>
