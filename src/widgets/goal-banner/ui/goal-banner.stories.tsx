@@ -94,4 +94,3 @@ export default meta
 
 export const Empty: Story = { args: { applicationsCount: 0 } }
 export const InProgress: Story = { args: { applicationsCount: 3 } }
-export const HiddenWhenGoalReached: Story = { args: { applicationsCount: 5 } }

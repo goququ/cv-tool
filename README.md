@@ -23,8 +23,23 @@ pnpm dev
 pnpm build
 pnpm lint
 pnpm preview
+pnpm storybook
+pnpm build-storybook
 ```
 
-## Status
+## Deployment
 
-Phase 1 bootstrap is in progress. Tooling, architecture, UI, and deployment setup will be added in the next phases.
+- Application: deploy to Vercel
+- Storybook: deploy to GitHub Pages via `.github/workflows/storybook-pages.yml`
+
+## CI
+
+GitHub Actions runs the following checks on `push` to `main` and on pull requests:
+
+```bash
+pnpm lint
+pnpm typecheck
+pnpm test:run
+pnpm build
+pnpm build-storybook
+```
