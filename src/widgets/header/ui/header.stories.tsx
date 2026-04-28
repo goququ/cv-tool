@@ -14,8 +14,11 @@ import type { JobApplication } from '@/entities/application/model/types'
 import { Header } from './header'
 
 class StubClient extends ApplicationClient {
-  constructor(private readonly stored: JobApplication[]) {
+  private readonly stored: JobApplication[]
+
+  constructor(stored: JobApplication[]) {
     super()
+    this.stored = stored
   }
 
   list() {

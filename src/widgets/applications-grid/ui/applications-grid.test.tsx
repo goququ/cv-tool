@@ -9,9 +9,11 @@ import { ApplicationsGrid } from './applications-grid'
 
 class StubClient extends ApplicationClient {
   public removed: string[] = []
+  private stored: JobApplication[]
 
-  constructor(private stored: JobApplication[]) {
+  constructor(stored: JobApplication[]) {
     super()
+    this.stored = stored
   }
 
   list() {

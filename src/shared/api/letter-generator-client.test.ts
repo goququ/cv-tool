@@ -62,9 +62,12 @@ describe('template letter generator client', () => {
     })
 
     expect(result).not.toContain('{{')
-    expect(result).toContain('your team')
+    expect(result).toContain('your')
     expect(result).toContain('this role')
-    expect(result).toContain('adapt quickly')
+    expect(result).toContain('adapt quickly and deliver consistently')
+    expect(result).toContain(
+      'I am confident I can contribute through thoughtful collaboration and reliable execution.',
+    )
   })
 
   it('can choose different templates across calls', async () => {

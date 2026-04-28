@@ -10,8 +10,11 @@ import {
 } from './use-applications-progress'
 
 class StubClient extends ApplicationClient {
-  constructor(private readonly stored: JobApplication[]) {
+  private readonly stored: JobApplication[]
+
+  constructor(stored: JobApplication[]) {
     super()
+    this.stored = stored
   }
 
   list() {

@@ -44,8 +44,11 @@ class MemoryApplicationClient extends ApplicationClient {
 }
 
 class StubLetterGenerator extends LetterGeneratorClient {
-  constructor(private readonly responses: string[]) {
+  private readonly responses: string[]
+
+  constructor(responses: string[]) {
     super()
+    this.responses = responses
   }
 
   generateLetter(_payload: LetterGenerationPayload) {
