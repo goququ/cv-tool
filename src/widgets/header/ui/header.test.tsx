@@ -70,7 +70,14 @@ describe('Header', () => {
   it('renders progress text and dots when goal is not reached', async () => {
     renderHeader(<Header showHomeButton={false} />, makeApplications(2))
 
-    expect(await screen.findByText('2/5 applications generated')).toBeDefined()
+    expect(
+      await screen.findByText((_, element) =>
+        element?.tagName === 'P' &&
+        element.textContent === '2/5 applications generated'
+          ? true
+          : false,
+      ),
+    ).toBeDefined()
     expect(screen.getByRole('progressbar')).toBeDefined()
     expect(screen.queryByLabelText('Applications goal reached')).toBeNull()
   })
@@ -87,13 +94,25 @@ describe('Header', () => {
   it('shows the real count when there are more applications than the goal', async () => {
     renderHeader(<Header showHomeButton={false} />, makeApplications(8))
 
-    expect(await screen.findByText('8/5 applications generated')).toBeDefined()
+    expect(
+      await screen.findByText((_, element) =>
+        element?.tagName === 'P' &&
+        element.textContent === '8/5 applications generated'
+          ? true
+          : false,
+      ),
+    ).toBeDefined()
   })
 
   it('hides the home button by default', async () => {
     renderHeader(<Header showHomeButton={false} />, [])
 
-    await screen.findByText('0/5 applications generated')
+    await screen.findByText((_, element) =>
+      element?.tagName === 'P' &&
+      element.textContent === '0/5 applications generated'
+        ? true
+        : false,
+    )
     expect(screen.queryByLabelText('Go to dashboard')).toBeNull()
   })
 

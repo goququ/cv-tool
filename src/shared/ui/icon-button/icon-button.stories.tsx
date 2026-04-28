@@ -16,7 +16,7 @@ const meta = {
     },
     tone: {
       control: { type: 'select' },
-      options: ['default', 'ghost'],
+      options: ['default', 'ghost', 'primary'],
     },
     disabled: { control: 'boolean' },
     icon: { control: false },
@@ -57,5 +57,14 @@ export const Ghost: Story = {
     icon: <HomeIcon aria-hidden="true" />,
     size: 'md',
     tone: 'ghost',
+  },
+}
+
+export const Primary: Story = {
+  args: {
+    'aria-label': 'Create new application',
+    icon: <HomeIcon aria-hidden="true" />,
+    size: 'md',
+    tone: 'primary',
   },
 }

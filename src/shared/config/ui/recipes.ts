@@ -125,6 +125,8 @@ export const iconButtonVariants = cva(
         default: 'border-line-default',
         ghost:
           'border-transparent bg-transparent shadow-none hover:border-transparent',
+        primary:
+          'border-brand-600 bg-brand-600 text-surface-page hover:border-brand-700 hover:bg-brand-700',
       },
     },
     defaultVariants: {

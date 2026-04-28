@@ -93,11 +93,7 @@ function ApplicationGeneratorPage() {
   }, [reset])
 
   return (
-    <section className="flex flex-col gap-12">
-      <h1 className="border-line-soft font-display text-ink-950 border-b pb-4 text-[length:var(--heading-display-lg-size)] leading-[var(--heading-display-lg-line)] font-[var(--heading-display-weight)] tracking-[var(--heading-display-tracking)]">
-        {headingTitle}
-      </h1>
-
+    <section className="flex flex-col gap-6 lg:gap-12">
       <form
         className="grid items-stretch gap-10 lg:auto-rows-[640px] lg:grid-cols-2 lg:gap-8"
         noValidate
@@ -105,38 +101,46 @@ function ApplicationGeneratorPage() {
           void handleSubmit(generate)(event)
         }}
       >
-        <div className="flex flex-col gap-6">
-          <ApplicationForm
-            additionalDetailsLength={additionalDetails.length}
-            errors={errors}
-            isGenerating={isGenerating}
-            register={register}
-          />
+        <div className="flex h-full min-h-[0] flex-col gap-4">
+          <header className="border-line-soft flex min-h-[3.25rem] shrink-0 items-end border-b pb-3">
+            <h1 className="font-display text-ink-950 text-[length:var(--heading-display-lg-size)] leading-[var(--heading-display-lg-line)] font-[var(--heading-display-weight)] tracking-[var(--heading-display-tracking)]">
+              {headingTitle}
+            </h1>
+          </header>
 
-          {status === 'error' ? (
-            <p
-              className="text-danger-700 text-[length:var(--text-helper-size)] leading-[var(--text-helper-line)]"
-              role="alert"
+          <div className="flex min-h-0 flex-1 flex-col gap-6">
+            <ApplicationForm
+              additionalDetailsLength={additionalDetails.length}
+              errors={errors}
+              isGenerating={isGenerating}
+              register={register}
+            />
+
+            {status === 'error' ? (
+              <p
+                className="text-danger-700 text-[length:var(--text-helper-size)] leading-[var(--text-helper-line)]"
+                role="alert"
+              >
+                Something went wrong while generating the letter. Please try
+                again.
+              </p>
+            ) : null}
+
+            <Button
+              className="mt-auto"
+              disabled={!isValid}
+              fullWidth
+              leadingIcon={
+                hasLetter ? <RegenerateIcon aria-hidden="true" /> : undefined
+              }
+              loading={isGenerating}
+              size="lg"
+              type="submit"
+              variant={hasLetter ? 'secondary' : 'primary'}
             >
-              Something went wrong while generating the letter. Please try
-              again.
-            </p>
-          ) : null}
-
-          <Button
-            className="mt-auto"
-            disabled={!isValid}
-            fullWidth
-            leadingIcon={
-              hasLetter ? <RegenerateIcon aria-hidden="true" /> : undefined
-            }
-            loading={isGenerating}
-            size="lg"
-            type="submit"
-            variant={hasLetter ? 'secondary' : 'primary'}
-          >
-            {hasLetter ? 'Try Again' : 'Generate Now'}
-          </Button>
+              {hasLetter ? 'Try Again' : 'Generate Now'}
+            </Button>
+          </div>
         </div>
 
         <ApplicationLetterPreview isGenerating={isGenerating} letter={letter} />

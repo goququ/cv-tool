@@ -21,7 +21,8 @@
   --color-ink-600: #667085;
   --color-ink-500: #98a2b3;
 
-  --color-line-soft: #edf0f4;
+  /* Divider / subtle rules (matches Figma e.g. title row border) */
+  --color-line-soft: #eaecf0;
   --color-line-default: #d0d5dd;
   --color-line-strong: #c2cad7;
 

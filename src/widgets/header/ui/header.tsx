@@ -21,13 +21,14 @@ function Header({ showHomeButton }: HeaderProps) {
         className="flex items-center gap-4 rounded-md outline-none focus-visible:ring-4 focus-visible:ring-[var(--control-focus-ring)]"
         to="/"
       >
-        <LogoSvg aria-hidden="true" className="h-16 w-auto" role="img" />
+        <LogoSvg aria-hidden="true" className="h-12 w-auto" role="img" />
       </Link>
 
       <div className="flex items-center gap-5">
         <div className="flex items-center gap-4">
           <p className="text-ink-600 text-[18px] leading-[28px]">
-            {`${String(count)}/${String(total)} applications generated`}
+            {`${String(count)}/${String(total)}`}
+            <span className="hidden sm:inline"> applications generated</span>
           </p>
 
           {goalReached ? (
