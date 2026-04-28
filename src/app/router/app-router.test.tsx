@@ -6,8 +6,7 @@ import {
 import { render, screen } from '@testing-library/react'
 import { beforeEach, describe, expect, it } from 'vitest'
 
-import { ApplicationsProvider } from '@/entities/application/model/applications-provider'
-import { LetterGeneratorProvider } from '@/entities/application/model/letter-generator-provider'
+import { ApplicationsProvider, LetterGeneratorProvider } from '@/app/providers'
 import { routeTree } from './app-router'
 
 function renderRouter(initialLocation: string) {

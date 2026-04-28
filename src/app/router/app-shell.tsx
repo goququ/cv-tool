@@ -1,7 +1,7 @@
 import { Outlet, useRouterState } from '@tanstack/react-router'
 
 import { PageContainer } from '@/shared/ui/page-container/page-container'
-import { Header } from '@/widgets/header/ui/header'
+import { Header } from '@/widgets/header'
 
 function AppShell() {
   const pathname = useRouterState({

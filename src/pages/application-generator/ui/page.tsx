@@ -1,19 +1,16 @@
-import { useCallback, useRef, useState } from 'react'
+import { useCallback } from 'react'
 
 import { type SubmitHandler, useForm, useWatch } from 'react-hook-form'
 
-import { useApplications } from '@/entities/application/model/use-applications'
-import { useLetterGenerator } from '@/entities/application/model/use-letter-generator'
+import { useGenerateApplicationLetter } from '@/features/generate-application-letter'
 import RegenerateIcon from '@/shared/assets/icons/repeat.svg?react'
 import { Button } from '@/shared/ui/button/button'
 import {
   ApplicationForm,
   type ApplicationFormValues,
-} from '@/widgets/application-form/ui/application-form'
-import { ApplicationLetterPreview } from '@/widgets/application-preview/ui/application-letter-preview'
-import { GoalBanner } from '@/widgets/goal-banner/ui/goal-banner'
-
-type GenerationStatus = 'idle' | 'generating' | 'ready' | 'error'
+} from '@/widgets/application-form'
+import { ApplicationLetterPreview } from '@/widgets/application-preview'
+import { GoalBanner } from '@/widgets/goal-banner'
 
 const emptyValues: ApplicationFormValues = {
   additionalDetails: '',
@@ -23,8 +20,8 @@ const emptyValues: ApplicationFormValues = {
 }
 
 function ApplicationGeneratorPage() {
-  const letterGenerator = useLetterGenerator()
-  const { saveApplication } = useApplications()
+  const { generate, letter, resetDraft, status } =
+    useGenerateApplicationLetter()
 
   const formApi = useForm<ApplicationFormValues>({
     defaultValues: emptyValues,
@@ -39,58 +36,20 @@ function ApplicationGeneratorPage() {
     reset,
   } = formApi
 
-  const [status, setStatus] = useState<GenerationStatus>('idle')
-  const [letter, setLetter] = useState<string | undefined>(undefined)
-  const draftIdRef = useRef<string | null>(null)
-  const createdAtRef = useRef<string | null>(null)
-
   const jobTitle = useWatch({ control, name: 'jobTitle' })
   const company = useWatch({ control, name: 'company' })
   const additionalDetails = useWatch({ control, name: 'additionalDetails' })
 
   const headingTitle = buildHeadingTitle(jobTitle, company)
-
-  const generate = useCallback<SubmitHandler<ApplicationFormValues>>(
-    async (values) => {
-      setStatus('generating')
-
-      try {
-        const generatedLetter = await letterGenerator.generateLetter(values)
-
-        const now = new Date().toISOString()
-        const id = draftIdRef.current ?? crypto.randomUUID()
-        const createdAt = createdAtRef.current ?? now
-
-        draftIdRef.current = id
-        createdAtRef.current = createdAt
-
-        await saveApplication({
-          ...values,
-          createdAt,
-          id,
-          letter: generatedLetter,
-          updatedAt: now,
-        })
-
-        setLetter(generatedLetter)
-        setStatus('ready')
-      } catch {
-        setStatus('error')
-      }
-    },
-    [letterGenerator, saveApplication],
-  )
+  const handleGenerate: SubmitHandler<ApplicationFormValues> = generate
 
   const isGenerating = status === 'generating'
   const hasLetter = status === 'ready' && letter !== undefined
 
   const handleStartNew = useCallback(() => {
     reset(emptyValues)
-    setStatus('idle')
-    setLetter(undefined)
-    draftIdRef.current = null
-    createdAtRef.current = null
-  }, [reset])
+    resetDraft()
+  }, [reset, resetDraft])
 
   return (
     <section className="flex flex-col gap-6 lg:gap-12">
@@ -98,7 +57,7 @@ function ApplicationGeneratorPage() {
         className="grid items-stretch gap-10 lg:auto-rows-[640px] lg:grid-cols-2 lg:gap-8"
         noValidate
         onSubmit={(event) => {
-          void handleSubmit(generate)(event)
+          void handleSubmit(handleGenerate)(event)
         }}
       >
         <div className="flex h-full min-h-[0] flex-col gap-4">

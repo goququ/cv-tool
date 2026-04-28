@@ -2,8 +2,8 @@ import { fireEvent, render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 
+import { ApplicationsProvider } from '@/app/providers'
 import { ApplicationClient } from '@/entities/application/model/application-client'
-import { ApplicationsProvider } from '@/entities/application/model/applications-provider'
 import type { JobApplication } from '@/entities/application/model/types'
 import { ApplicationsGrid } from './applications-grid'
 

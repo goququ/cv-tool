@@ -8,8 +8,8 @@ import {
   RouterProvider,
 } from '@tanstack/react-router'
 
+import { ApplicationsProvider } from '@/app/providers'
 import { ApplicationClient } from '@/entities/application/model/application-client'
-import { ApplicationsProvider } from '@/entities/application/model/applications-provider'
 import type { JobApplication } from '@/entities/application/model/types'
 import { Header } from './header'
 

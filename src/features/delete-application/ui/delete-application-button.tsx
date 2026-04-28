@@ -1,4 +1,4 @@
-import { useApplications } from '@/entities/application/model/use-applications'
+import { useApplications } from '@/entities/application'
 import TrashIcon from '@/shared/assets/icons/trash.svg?react'
 import { TextButton } from '@/shared/ui/text-button/text-button'
 

@@ -1,7 +1,6 @@
-import { useApplications } from '@/entities/application/model/use-applications'
-import { ApplicationPreviewCard } from '@/entities/application/ui/application-preview-card'
-import { CopyApplicationButton } from '@/features/copy-application/ui/copy-application-button'
-import { DeleteApplicationButton } from '@/features/delete-application/ui/delete-application-button'
+import { ApplicationPreviewCard, useApplications } from '@/entities/application'
+import { CopyApplicationButton } from '@/features/copy-application'
+import { DeleteApplicationButton } from '@/features/delete-application'
 
 function ApplicationsGrid() {
   const { applications } = useApplications()

@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
 
+import { ApplicationsProvider } from '@/app/providers'
 import { ApplicationClient } from './application-client'
-import { ApplicationsProvider } from './applications-provider'
 import type { JobApplication } from './types'
 import {
   APPLICATIONS_GOAL,

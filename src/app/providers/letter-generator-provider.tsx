@@ -2,9 +2,9 @@ import type { PropsWithChildren } from 'react'
 
 import {
   type LetterGeneratorClient,
+  LetterGeneratorContext,
   TemplateLetterGeneratorClient,
-} from '@/shared/api/letter-generator-client'
-import { LetterGeneratorContext } from './use-letter-generator'
+} from '@/entities/application'
 
 type LetterGeneratorProviderProps = PropsWithChildren<{
   client?: LetterGeneratorClient

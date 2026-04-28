@@ -1,6 +1,6 @@
 import { Link } from '@tanstack/react-router'
 
-import { useApplicationsProgress } from '@/entities/application/model/use-applications-progress'
+import { useApplicationsProgress } from '@/entities/application'
 import PlusIcon from '@/shared/assets/icons/plus.svg?react'
 import { Button } from '@/shared/ui/button/button'
 import { Card } from '@/shared/ui/card/card'

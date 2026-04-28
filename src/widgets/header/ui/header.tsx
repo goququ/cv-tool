@@ -1,6 +1,6 @@
 import { Link } from '@tanstack/react-router'
 
-import { useApplicationsProgress } from '@/entities/application/model/use-applications-progress'
+import { useApplicationsProgress } from '@/entities/application'
 import CheckIcon from '@/shared/assets/icons/check.svg?react'
 import HomeIcon from '@/shared/assets/icons/home.svg?react'
 import LogoSvg from '@/shared/assets/logo.svg?react'

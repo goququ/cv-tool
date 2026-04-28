@@ -1,17 +1,17 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
-import { getRandomInt } from '../lib/get-random-int'
-import { sleep } from '../lib/sleep'
+import { getRandomInt } from '@/shared/lib/get-random-int'
+import { sleep } from '@/shared/lib/sleep'
 import {
   type LetterGenerationPayload,
   TemplateLetterGeneratorClient,
 } from './letter-generator-client'
 
-vi.mock('../lib/get-random-int', () => ({
+vi.mock('@/shared/lib/get-random-int', () => ({
   getRandomInt: vi.fn(),
 }))
 
-vi.mock('../lib/sleep', () => ({
+vi.mock('@/shared/lib/sleep', () => ({
   sleep: vi.fn(() => Promise.resolve()),
 }))
 

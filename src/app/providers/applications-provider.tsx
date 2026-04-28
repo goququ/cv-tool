@@ -6,15 +6,15 @@ import {
   useState,
 } from 'react'
 
+import type {
+  ApplicationsContextValue,
+  JobApplication,
+} from '@/entities/application'
 import {
   ApplicationClient,
-  LocalStorageApplicationClient,
-} from './application-client'
-import type { JobApplication } from './types'
-import {
   ApplicationsContext,
-  type ApplicationsContextValue,
-} from './use-applications'
+  LocalStorageApplicationClient,
+} from '@/entities/application'
 
 type ApplicationsProviderProps = PropsWithChildren<{
   client?: ApplicationClient

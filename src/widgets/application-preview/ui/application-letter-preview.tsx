@@ -1,4 +1,4 @@
-import { CopyApplicationButton } from '@/features/copy-application/ui/copy-application-button'
+import { CopyApplicationButton } from '@/features/copy-application'
 import { Card } from '@/shared/ui/card/card'
 
 type ApplicationLetterPreviewProps = {

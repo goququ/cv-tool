@@ -2,10 +2,12 @@ import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { beforeEach, describe, expect, it } from 'vitest'
 
-import { ApplicationClient } from './application-client'
+import {
+  ApplicationClient,
+  type JobApplication,
+  useApplications,
+} from '@/entities/application'
 import { ApplicationsProvider } from './applications-provider'
-import type { JobApplication } from './types'
-import { useApplications } from './use-applications'
 
 const applicationFixture: JobApplication = {
   additionalDetails: 'I enjoy building well-structured products.',

@@ -1,7 +1,6 @@
 import { RouterProvider } from '@tanstack/react-router'
 
-import { ApplicationsProvider } from '@/entities/application/model/applications-provider'
-import { LetterGeneratorProvider } from '@/entities/application/model/letter-generator-provider'
+import { ApplicationsProvider, LetterGeneratorProvider } from '@/app/providers'
 import { appRouter } from './router/app-router'
 
 function App() {

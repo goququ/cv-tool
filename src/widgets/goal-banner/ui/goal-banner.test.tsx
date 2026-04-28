@@ -9,8 +9,8 @@ import {
 import { render, screen } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
 
+import { ApplicationsProvider } from '@/app/providers'
 import { ApplicationClient } from '@/entities/application/model/application-client'
-import { ApplicationsProvider } from '@/entities/application/model/applications-provider'
 import type { JobApplication } from '@/entities/application/model/types'
 import { GoalBanner } from './goal-banner'
 

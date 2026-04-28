@@ -1,12 +1,12 @@
+import { getRandomInt } from '@/shared/lib/get-random-int'
+import { sleep } from '@/shared/lib/sleep'
+
 type LetterGenerationPayload = {
   additionalDetails: string
   company: string
   jobTitle: string
   skills: string
 }
-
-import { getRandomInt } from '../lib/get-random-int'
-import { sleep } from '../lib/sleep'
 
 abstract class LetterGeneratorClient {
   abstract generateLetter(payload: LetterGenerationPayload): Promise<string>

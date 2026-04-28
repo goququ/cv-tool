@@ -1,6 +1,6 @@
 import { createContext, useContext } from 'react'
 
-import type { LetterGeneratorClient } from '@/shared/api/letter-generator-client'
+import type { LetterGeneratorClient } from './letter-generator-client'
 
 const LetterGeneratorContext = createContext<LetterGeneratorClient | null>(null)
 

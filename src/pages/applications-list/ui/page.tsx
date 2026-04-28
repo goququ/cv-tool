@@ -1,11 +1,11 @@
 import { Link } from '@tanstack/react-router'
 
-import { useApplications } from '@/entities/application/model/use-applications'
+import { useApplications } from '@/entities/application'
 import PlusIcon from '@/shared/assets/icons/plus.svg?react'
 import { Button } from '@/shared/ui/button/button'
 import { IconButton } from '@/shared/ui/icon-button/icon-button'
-import { ApplicationsGrid } from '@/widgets/applications-grid/ui/applications-grid'
-import { GoalBanner } from '@/widgets/goal-banner/ui/goal-banner'
+import { ApplicationsGrid } from '@/widgets/applications-grid'
+import { GoalBanner } from '@/widgets/goal-banner'
 
 function ApplicationsListPage() {
   const { applications } = useApplications()

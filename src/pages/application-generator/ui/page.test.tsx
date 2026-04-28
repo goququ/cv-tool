@@ -10,14 +10,14 @@ import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 
-import { ApplicationClient } from '@/entities/application/model/application-client'
-import { ApplicationsProvider } from '@/entities/application/model/applications-provider'
-import type { JobApplication } from '@/entities/application/model/types'
-import { LetterGeneratorContext } from '@/entities/application/model/use-letter-generator'
+import { ApplicationsProvider } from '@/app/providers'
 import {
+  ApplicationClient,
+  type JobApplication,
   type LetterGenerationPayload,
   LetterGeneratorClient,
-} from '@/shared/api/letter-generator-client'
+  LetterGeneratorContext,
+} from '@/entities/application'
 import { ApplicationGeneratorPage } from './page'
 
 class MemoryApplicationClient extends ApplicationClient {

@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { describe, expect, it, vi } from 'vitest'
 
-import { ApplicationsContext } from '@/entities/application/model/use-applications'
+import { ApplicationsContext } from '@/entities/application'
 import { DeleteApplicationButton } from './delete-application-button'
 
 describe('DeleteApplicationButton', () => {

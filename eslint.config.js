@@ -228,6 +228,13 @@ export default defineConfig([
     },
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',
+      'no-restricted-imports': 'off',
+    },
+  },
+  {
+    files: ['**/*.stories.{ts,tsx}'],
+    rules: {
+      'no-restricted-imports': 'off',
     },
   },
   eslintConfigPrettier,
