@@ -2,6 +2,7 @@ import type { ButtonHTMLAttributes, ReactNode } from 'react'
 
 import { type VariantProps } from 'class-variance-authority'
 
+import LoadingIcon from '../../assets/icons/loading.svg?react'
 import { buttonVariants } from '../../config/ui/recipes'
 import { cn } from '../../lib/cn'
 
@@ -12,6 +13,10 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
     loadingIcon?: ReactNode
     trailingIcon?: ReactNode
   }
+
+const defaultLoadingIcon = (
+  <LoadingIcon aria-label="loading" className="animate-spin" />
+)
 
 function Button({
   className,
@@ -54,12 +59,12 @@ function Button({
         ) : null}
       </span>
 
-      {loading && loadingIcon ? (
+      {loading ? (
         <span
           className="absolute inset-0 inline-flex items-center justify-center"
           data-slot="loading"
         >
-          {loadingIcon}
+          {loadingIcon ?? defaultLoadingIcon}
         </span>
       ) : null}
     </button>

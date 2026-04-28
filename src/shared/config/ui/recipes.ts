@@ -32,12 +32,12 @@ export const buttonVariants = cva(
 )
 
 export const inputVariants = cva(
-  'w-full rounded-control border bg-[var(--control-bg)] px-[var(--control-padding-x)] text-[var(--control-fg)] outline-none transition-[border-color,box-shadow] duration-150 placeholder:text-[var(--control-placeholder)] hover:border-[var(--control-border-hover)] focus:border-[var(--control-focus-border)] focus:ring-4 focus:ring-[var(--control-focus-ring)] disabled:cursor-not-allowed disabled:bg-surface-muted disabled:text-ink-500',
+  'w-full rounded-[var(--radius-input)] border bg-[var(--input-bg)] px-[var(--input-padding-x)] text-[length:var(--input-font-size)] leading-[var(--input-line-height)] text-[var(--input-fg)] shadow-control outline-none transition-[border-color,box-shadow] duration-150 placeholder:text-[var(--input-placeholder)] hover:border-[var(--input-border-hover)] focus:border-[var(--input-focus-border)] focus:ring-4 focus:ring-[var(--input-focus-ring)] disabled:cursor-not-allowed disabled:bg-surface-muted disabled:text-ink-500 aria-[invalid=true]:border-[var(--input-border-invalid)] aria-[invalid=true]:focus:border-danger-300 aria-[invalid=true]:focus:ring-[var(--input-focus-ring-invalid)]',
   {
     variants: {
       size: {
-        md: 'h-[var(--control-height-md)] border-[var(--control-border)] text-base',
-        sm: 'h-12 border-[var(--control-border)] text-base',
+        sm: 'h-[var(--input-height-sm)] py-[var(--input-padding-y)] border-[var(--input-border)]',
+        md: 'h-[var(--input-height-md)] py-[var(--input-padding-y)] border-[var(--input-border)]',
       },
     },
     defaultVariants: {
@@ -47,12 +47,12 @@ export const inputVariants = cva(
 )
 
 export const textareaVariants = cva(
-  'w-full rounded-control border border-[var(--control-border)] bg-[var(--control-bg)] px-[var(--control-padding-x)] py-4 text-[var(--control-fg)] outline-none transition-[border-color,box-shadow] duration-150 placeholder:text-[var(--control-placeholder)] hover:border-[var(--control-border-hover)] focus:border-[var(--control-focus-border)] focus:ring-4 focus:ring-[var(--control-focus-ring)] disabled:cursor-not-allowed disabled:bg-surface-muted disabled:text-ink-500',
+  'w-full rounded-[var(--radius-textarea)] border border-[var(--input-border)] bg-[var(--input-bg)] px-[var(--textarea-padding-x)] py-[var(--textarea-padding-y)] text-[length:var(--input-font-size)] leading-[var(--input-line-height)] text-[var(--input-fg)] shadow-control outline-none transition-[border-color,box-shadow] duration-150 placeholder:text-[var(--input-placeholder)] hover:border-[var(--input-border-hover)] focus:border-[var(--input-focus-border)] focus:ring-4 focus:ring-[var(--input-focus-ring)] disabled:cursor-not-allowed disabled:bg-surface-muted disabled:text-ink-500 aria-[invalid=true]:border-[var(--input-border-invalid)] aria-[invalid=true]:focus:border-danger-300 aria-[invalid=true]:focus:ring-[var(--input-focus-ring-invalid)]',
   {
     variants: {
       size: {
-        md: 'min-h-[var(--textarea-min-height)] text-base',
-        sm: 'min-h-40 text-base',
+        md: 'min-h-[var(--textarea-min-height)]',
+        sm: 'min-h-40',
       },
       resize: {
         none: 'resize-none',
@@ -60,8 +60,28 @@ export const textareaVariants = cva(
       },
     },
     defaultVariants: {
-      size: 'sm',
+      size: 'md',
       resize: 'none',
+    },
+  },
+)
+
+export const fieldClass = 'flex flex-col gap-[var(--field-gap)]'
+
+export const fieldLabelClass =
+  'text-[length:var(--text-label-size)] leading-[var(--text-label-line)] font-[var(--text-label-weight)] text-ink-800'
+
+export const fieldHelperVariants = cva(
+  'text-[length:var(--text-helper-size)] leading-[var(--text-helper-line)] font-[var(--text-label-weight)]',
+  {
+    variants: {
+      tone: {
+        muted: 'text-ink-700',
+        danger: 'text-danger-700',
+      },
+    },
+    defaultVariants: {
+      tone: 'muted',
     },
   },
 )

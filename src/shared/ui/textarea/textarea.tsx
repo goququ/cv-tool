@@ -6,11 +6,21 @@ import { textareaVariants } from '../../config/ui/recipes'
 import { cn } from '../../lib/cn'
 
 type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement> &
-  VariantProps<typeof textareaVariants>
+  VariantProps<typeof textareaVariants> & {
+    invalid?: boolean
+  }
 
-function Textarea({ className, resize, size, ...props }: TextareaProps) {
+function Textarea({
+  className,
+  invalid,
+  resize,
+  size,
+  'aria-invalid': ariaInvalid,
+  ...props
+}: TextareaProps) {
   return (
     <textarea
+      aria-invalid={ariaInvalid ?? (invalid ? true : undefined)}
       className={cn(textareaVariants({ resize, size }), className)}
       {...props}
     />

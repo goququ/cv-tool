@@ -5,11 +5,25 @@ import { type VariantProps } from 'class-variance-authority'
 import { inputVariants } from '../../config/ui/recipes'
 import { cn } from '../../lib/cn'
 
-type InputProps = InputHTMLAttributes<HTMLInputElement> &
-  VariantProps<typeof inputVariants>
+type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> &
+  VariantProps<typeof inputVariants> & {
+    invalid?: boolean
+  }
 
-function Input({ className, size, ...props }: InputProps) {
-  return <input className={cn(inputVariants({ size }), className)} {...props} />
+function Input({
+  className,
+  invalid,
+  size,
+  'aria-invalid': ariaInvalid,
+  ...props
+}: InputProps) {
+  return (
+    <input
+      aria-invalid={ariaInvalid ?? (invalid ? true : undefined)}
+      className={cn(inputVariants({ size }), className)}
+      {...props}
+    />
+  )
 }
 
 export { Input }

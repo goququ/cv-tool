@@ -15,7 +15,7 @@
   --color-brand-800: #075235;
   --color-brand-900: #083f2a;
 
-  --color-ink-950: #17213a;
+  --color-ink-950: #101828;
   --color-ink-800: #344054;
   --color-ink-700: #475467;
   --color-ink-600: #667085;
@@ -30,12 +30,20 @@
   --color-surface-banner: #effdf6;
   --color-surface-disabled: #d0d5dd;
 
+  --color-danger-50: #fef3f2;
+  --color-danger-100: #fee4e2;
+  --color-danger-300: #fda29b;
+  --color-danger-500: #f04438;
+  --color-danger-700: #b42318;
+
   --shadow-card: 0 2px 10px rgba(23, 33, 58, 0.04);
   --shadow-control: 0 1px 2px rgba(16, 24, 40, 0.05);
   --shadow-floating: 0 18px 50px rgba(23, 33, 58, 0.08);
   --shadow-focus: 0 0 0 4px rgba(143, 242, 183, 0.45);
 
   --radius-button: 6px;
+  --radius-input: 6px;
+  --radius-textarea: 8px;
   --radius-control: 10px;
   --radius-card: 20px;
   --radius-pill: 999px;
@@ -58,7 +66,10 @@
   --text-body-line: 1.52;
   --text-body-weight: 400;
   --text-label-size: 14px;
+  --text-label-line: 20px;
   --text-label-weight: 500;
+  --text-helper-size: 14px;
+  --text-helper-line: 20px;
 
   --button-height-sm: 44px;
   --button-height-lg: 60px;
@@ -70,16 +81,27 @@
   --button-font-size-sm: 16px;
   --button-font-size-lg: 18px;
 
-  --control-height-md: 56px;
-  --control-padding-x: 18px;
-  --control-border: var(--color-line-default);
-  --control-border-hover: var(--color-line-strong);
-  --control-bg: #ffffff;
-  --control-fg: var(--color-ink-950);
-  --control-placeholder: var(--color-ink-600);
-  --control-focus-ring: rgba(143, 242, 183, 0.45);
-  --control-focus-border: #8ff2b7;
-  --textarea-min-height: 280px;
+  --field-gap: 6px;
+
+  --input-height-sm: 40px;
+  --input-height-md: 48px;
+  --input-padding-x: 12px;
+  --input-padding-y: 8px;
+  --input-font-size: 16px;
+  --input-line-height: 24px;
+  --input-bg: var(--color-surface-page);
+  --input-fg: var(--color-ink-950);
+  --input-border: var(--color-line-default);
+  --input-border-hover: var(--color-line-strong);
+  --input-border-invalid: var(--color-danger-300);
+  --input-placeholder: var(--color-ink-600);
+  --input-focus-ring: #d3f8df;
+  --input-focus-border: #73e2a3;
+  --input-focus-ring-invalid: var(--color-danger-100);
+
+  --textarea-padding-x: 14px;
+  --textarea-padding-y: 12px;
+  --textarea-min-height: 236px;
 
   --card-bg: var(--color-surface-muted);
   --card-banner-bg: var(--color-surface-banner);

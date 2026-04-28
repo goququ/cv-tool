@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 
-import LoadingIcon from '../../assets/icons/loading.svg?react'
 import PlusIcon from '../../assets/icons/plus.svg?react'
 import RepeatIcon from '../../assets/icons/repeat.svg?react'
 import { Button } from './button'
@@ -72,7 +71,6 @@ export const Loading: Story = {
   args: {
     children: 'Generate Letter',
     loading: true,
-    loadingIcon: <LoadingIcon aria-label="loading" className="animate-spin" />,
     size: 'lg',
     variant: 'primary',
   },
@@ -82,7 +80,6 @@ export const LoadingSecondary: Story = {
   args: {
     children: 'Try Again',
     loading: true,
-    loadingIcon: <LoadingIcon aria-label="loading" className="animate-spin" />,
     size: 'lg',
     variant: 'secondary',
   },
