@@ -34,7 +34,11 @@ function Button({
   return (
     <button
       aria-busy={loading ? 'true' : undefined}
-      className={cn(buttonVariants({ variant, size, fullWidth }), className)}
+      className={cn(
+        buttonVariants({ variant, size, fullWidth }),
+        loading && 'pointer-events-none',
+        className,
+      )}
       data-loading={loading ? 'true' : undefined}
       disabled={disabled}
       {...props}

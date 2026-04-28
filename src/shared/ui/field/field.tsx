@@ -14,9 +14,16 @@ type FieldOwnProps = {
   error?: ReactNode
   counter?: ReactNode
   invalid?: boolean
+  required?: boolean
   htmlFor?: string
   className?: string
   children: ReactNode
+}
+
+type ControlProps = {
+  id?: string
+  'aria-invalid'?: 'true' | 'false'
+  'aria-required'?: 'true' | 'false'
 }
 
 function Field({
@@ -25,6 +32,7 @@ function Field({
   error,
   counter,
   invalid,
+  required,
   htmlFor,
   className,
   children,
@@ -35,20 +43,27 @@ function Field({
   const showHelperRow = helperText !== undefined || counter !== undefined
   const isInvalid = invalid === true || error !== undefined
 
-  let control = children
-  if (!htmlFor && isValidElement(children)) {
-    const child = children as ReactElement<{ id?: string }>
-    if (child.props.id === undefined) {
-      control = cloneElement(child, { id: controlId })
-    }
-  }
+  const control = isValidElement(children)
+    ? cloneElement(children as ReactElement<ControlProps>, {
+        id: controlId,
+        'aria-invalid': isInvalid ? 'true' : undefined,
+        'aria-required': required ? 'true' : undefined,
+      })
+    : children
 
   return (
     <div className={cn(fieldClass, className)}>
       {label !== undefined ? (
-        <label className={fieldLabelClass} htmlFor={controlId}>
-          {label}
-        </label>
+        <span className="inline-flex items-baseline gap-1">
+          <label className={fieldLabelClass} htmlFor={controlId}>
+            {label}
+          </label>
+          {required ? (
+            <span aria-hidden="true" className="text-danger-700">
+              *
+            </span>
+          ) : null}
+        </span>
       ) : null}
 
       {control}

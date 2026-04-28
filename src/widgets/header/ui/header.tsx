@@ -12,18 +12,22 @@ type HeaderProps = {
 }
 
 function Header({ showHomeButton }: HeaderProps) {
-  const { count, goalReached, total, visibleCount } = useApplicationsProgress()
+  const { count, goalReached, total } = useApplicationsProgress()
 
   return (
     <header className="flex items-center justify-between gap-6">
-      <div className="flex items-center gap-4">
-        <LogoSvg aria-label="Alt+Shift" className="h-16 w-auto" role="img" />
-      </div>
+      <Link
+        aria-label="Alt+Shift"
+        className="flex items-center gap-4 rounded-md outline-none focus-visible:ring-4 focus-visible:ring-[var(--control-focus-ring)]"
+        to="/"
+      >
+        <LogoSvg aria-hidden="true" className="h-16 w-auto" role="img" />
+      </Link>
 
       <div className="flex items-center gap-5">
         <div className="flex items-center gap-4">
           <p className="text-ink-600 text-[18px] leading-[28px]">
-            {`${String(visibleCount)}/${String(total)} applications generated`}
+            {`${String(count)}/${String(total)} applications generated`}
           </p>
 
           {goalReached ? (

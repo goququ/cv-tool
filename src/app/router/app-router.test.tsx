@@ -7,6 +7,7 @@ import { render, screen } from '@testing-library/react'
 import { beforeEach, describe, expect, it } from 'vitest'
 
 import { ApplicationsProvider } from '@/entities/application/model/applications-provider'
+import { LetterGeneratorProvider } from '@/entities/application/model/letter-generator-provider'
 import { routeTree } from './app-router'
 
 function renderRouter(initialLocation: string) {
@@ -19,7 +20,9 @@ function renderRouter(initialLocation: string) {
 
   return render(
     <ApplicationsProvider>
-      <RouterProvider router={router} />
+      <LetterGeneratorProvider>
+        <RouterProvider router={router} />
+      </LetterGeneratorProvider>
     </ApplicationsProvider>,
   )
 }
@@ -42,10 +45,7 @@ describe('app router', () => {
     renderRouter('/new')
 
     expect(
-      await screen.findByRole('heading', {
-        level: 1,
-        name: 'Product manager, Apple',
-      }),
+      await screen.findByRole('heading', { level: 1, name: 'New application' }),
     ).toBeDefined()
     expect(await screen.findByLabelText('Go to dashboard')).toBeDefined()
   })

@@ -1,39 +1,19 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback } from 'react'
 
 import CopyIcon from '@/shared/assets/icons/copy.svg?react'
+import { useCopyToClipboard } from '@/shared/lib/use-copy-to-clipboard'
 import { TextButton } from '@/shared/ui/text-button/text-button'
-
-const COPIED_RESET_DELAY_MS = 1500
 
 type CopyApplicationButtonProps = {
   letter: string
 }
 
 function CopyApplicationButton({ letter }: CopyApplicationButtonProps) {
-  const [isCopied, setIsCopied] = useState(false)
-  const resetTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
-
-  useEffect(() => {
-    return () => {
-      if (resetTimerRef.current !== null) {
-        clearTimeout(resetTimerRef.current)
-      }
-    }
-  }, [])
+  const { copy, isCopied } = useCopyToClipboard()
 
   const handleCopy = useCallback(() => {
-    void navigator.clipboard.writeText(letter).then(() => {
-      setIsCopied(true)
-
-      if (resetTimerRef.current !== null) {
-        clearTimeout(resetTimerRef.current)
-      }
-
-      resetTimerRef.current = setTimeout(() => {
-        setIsCopied(false)
-      }, COPIED_RESET_DELAY_MS)
-    })
-  }, [letter])
+    void copy(letter)
+  }, [copy, letter])
 
   return (
     <TextButton
@@ -46,4 +26,4 @@ function CopyApplicationButton({ letter }: CopyApplicationButtonProps) {
   )
 }
 
-export { COPIED_RESET_DELAY_MS, CopyApplicationButton }
+export { CopyApplicationButton }

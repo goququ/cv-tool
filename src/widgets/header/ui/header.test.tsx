@@ -84,10 +84,10 @@ describe('Header', () => {
     expect(screen.queryByRole('progressbar')).toBeNull()
   })
 
-  it('caps the displayed count at the goal even when there are more applications', async () => {
+  it('shows the real count when there are more applications than the goal', async () => {
     renderHeader(<Header showHomeButton={false} />, makeApplications(8))
 
-    expect(await screen.findByText('5/5 applications generated')).toBeDefined()
+    expect(await screen.findByText('8/5 applications generated')).toBeDefined()
   })
 
   it('hides the home button by default', async () => {

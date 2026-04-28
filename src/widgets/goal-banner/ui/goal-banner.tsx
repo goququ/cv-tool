@@ -6,8 +6,12 @@ import { Button } from '@/shared/ui/button/button'
 import { Card } from '@/shared/ui/card/card'
 import { ProgressDots } from '@/shared/ui/progress-dots/progress-dots'
 
-function GoalBanner() {
-  const { count, goalReached, total, visibleCount } = useApplicationsProgress()
+type GoalBannerProps = {
+  onCreateNew?: () => void
+}
+
+function GoalBanner({ onCreateNew }: GoalBannerProps = {}) {
+  const { count, goalReached, total } = useApplicationsProgress()
 
   if (goalReached) {
     return null
@@ -26,16 +30,27 @@ function GoalBanner() {
           </p>
         </div>
 
-        <Link to="/new">
-          <Button leadingIcon={<PlusIcon aria-hidden="true" />} size="lg">
+        {onCreateNew ? (
+          <Button
+            leadingIcon={<PlusIcon aria-hidden="true" />}
+            onClick={onCreateNew}
+            size="lg"
+            type="button"
+          >
             Create New
           </Button>
-        </Link>
+        ) : (
+          <Link to="/new">
+            <Button leadingIcon={<PlusIcon aria-hidden="true" />} size="lg">
+              Create New
+            </Button>
+          </Link>
+        )}
 
         <div className="flex flex-col items-center gap-2">
           <ProgressDots current={count} total={total} />
           <span className="text-ink-600 text-[18px] leading-[28px]">
-            {`${String(visibleCount)} out of ${String(total)}`}
+            {`${String(count)} out of ${String(total)}`}
           </span>
         </div>
       </div>

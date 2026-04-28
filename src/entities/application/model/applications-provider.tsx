@@ -20,9 +20,11 @@ type ApplicationsProviderProps = PropsWithChildren<{
   client?: ApplicationClient
 }>
 
+const defaultApplicationsClient = new LocalStorageApplicationClient()
+
 function ApplicationsProvider({
   children,
-  client = new LocalStorageApplicationClient(),
+  client = defaultApplicationsClient,
 }: ApplicationsProviderProps) {
   const [applications, setApplications] = useState<JobApplication[]>([])
 

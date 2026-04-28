@@ -18,10 +18,10 @@ describe('Field', () => {
     expect((input as HTMLInputElement).placeholder).toBe('Product manager')
   })
 
-  it('preserves a child input id when one is provided', () => {
+  it('uses the htmlFor prop as the control id when provided', () => {
     render(
-      <Field label="Job title">
-        <Input id="explicit-id" placeholder="Product manager" />
+      <Field htmlFor="explicit-id" label="Job title">
+        <Input placeholder="Product manager" />
       </Field>,
     )
 

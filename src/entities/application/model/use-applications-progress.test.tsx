@@ -46,7 +46,6 @@ function ProgressHarness() {
   return (
     <>
       <span data-testid="count">{String(progress.count)}</span>
-      <span data-testid="visible">{String(progress.visibleCount)}</span>
       <span data-testid="total">{String(progress.total)}</span>
       <span data-testid="goal">{progress.goalReached ? 'yes' : 'no'}</span>
     </>
@@ -66,21 +65,17 @@ describe('useApplicationsProgress', () => {
     renderHarness([])
 
     expect((await screen.findByTestId('count')).textContent).toBe('0')
-    expect(screen.getByTestId('visible').textContent).toBe('0')
     expect(screen.getByTestId('total').textContent).toBe(
       String(APPLICATIONS_GOAL),
     )
     expect(screen.getByTestId('goal').textContent).toBe('no')
   })
 
-  it('caps visible count at the goal but keeps the raw count', async () => {
+  it('keeps the raw count when there are more applications than the goal', async () => {
     renderHarness(makeApplications(APPLICATIONS_GOAL + 2))
 
     expect((await screen.findByTestId('count')).textContent).toBe(
       String(APPLICATIONS_GOAL + 2),
-    )
-    expect(screen.getByTestId('visible').textContent).toBe(
-      String(APPLICATIONS_GOAL),
     )
     expect(screen.getByTestId('goal').textContent).toBe('yes')
   })
