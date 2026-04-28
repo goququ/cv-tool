@@ -1,4 +1,4 @@
-import { useApplications } from '@/entities/application/model/use-applications'
+import { useApplications } from './use-applications'
 
 const APPLICATIONS_GOAL = 5
 

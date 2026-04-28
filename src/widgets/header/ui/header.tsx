@@ -1,11 +1,11 @@
 import { Link } from '@tanstack/react-router'
 
+import { useApplicationsProgress } from '@/entities/application/model/use-applications-progress'
 import CheckIcon from '@/shared/assets/icons/check.svg?react'
 import HomeIcon from '@/shared/assets/icons/home.svg?react'
 import LogoSvg from '@/shared/assets/logo.svg?react'
 import { IconButton } from '@/shared/ui/icon-button/icon-button'
 import { ProgressDots } from '@/shared/ui/progress-dots/progress-dots'
-import { useApplicationsProgress } from '../model/use-applications-progress'
 
 type HeaderProps = {
   showHomeButton: boolean
