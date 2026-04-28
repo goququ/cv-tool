@@ -1,6 +1,6 @@
+import PlusIcon from '@/shared/assets/icons/plus.svg?react'
 import { Button } from '@/shared/ui/button/button'
 import { Card } from '@/shared/ui/card/card'
-import PlusIcon from '../../../assets/icons/plus.svg?react'
 
 function ApplicationsListPage() {
   return (

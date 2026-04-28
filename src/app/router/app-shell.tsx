@@ -1,9 +1,9 @@
 import { Link, Outlet, useRouterState } from '@tanstack/react-router'
 
+import HomeIcon from '@/shared/assets/icons/home.svg?react'
+import LogoSvg from '@/shared/assets/logo.svg?react'
 import { IconButton } from '@/shared/ui/icon-button/icon-button'
 import { ProgressDots } from '@/shared/ui/progress-dots/progress-dots'
-import HomeIcon from '../../assets/icons/home.svg?react'
-import LogoSvg from '../../assets/logo.svg?react'
 
 function AppShell() {
   const pathname = useRouterState({

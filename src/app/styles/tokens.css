@@ -1,6 +1,7 @@
 @theme {
-  --font-sans: 'Fixel', 'Inter', 'Segoe UI', sans-serif;
-  --font-display: 'Fixel', 'Inter', 'Segoe UI', sans-serif;
+  --font-sans: 'Fixel Text', 'Inter', 'Segoe UI', sans-serif;
+  --font-display:
+    'Fixel Display', 'Fixel Text', 'Inter', 'Segoe UI', sans-serif;
   --font-mono: 'SFMono-Regular', 'SF Mono', 'Consolas', monospace;
 
   --color-brand-50: #eefbf4;

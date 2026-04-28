@@ -1,9 +1,9 @@
+import CopyIcon from '@/shared/assets/icons/copy.svg?react'
+import RegenerateIcon from '@/shared/assets/icons/repeat.svg?react'
 import { Button } from '@/shared/ui/button/button'
 import { Card } from '@/shared/ui/card/card'
 import { Input } from '@/shared/ui/input/input'
 import { Textarea } from '@/shared/ui/textarea/textarea'
-import CopyIcon from '../../../assets/icons/copy.svg?react'
-import RegenerateIcon from '../../../assets/icons/repeat.svg?react'
 
 function ApplicationGeneratorPage() {
   return (
