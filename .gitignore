@@ -6,6 +6,7 @@ dist/
 dist-ssr/
 coverage/
 spec/
+storybook-static/
 
 # logs
 logs/

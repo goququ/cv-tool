@@ -10,33 +10,34 @@
   --color-brand-300: #9ddfba;
   --color-brand-400: #64c793;
   --color-brand-500: #249c67;
-  --color-brand-600: #09824f;
+  --color-brand-600: #087443;
   --color-brand-700: #06673f;
   --color-brand-800: #075235;
   --color-brand-900: #083f2a;
 
   --color-ink-950: #17213a;
-  --color-ink-800: #3d4962;
-  --color-ink-700: #5f6b85;
-  --color-ink-600: #7d879f;
-  --color-ink-500: #a6aebe;
+  --color-ink-800: #344054;
+  --color-ink-700: #475467;
+  --color-ink-600: #667085;
+  --color-ink-500: #98a2b3;
 
   --color-line-soft: #edf0f4;
-  --color-line-default: #d8dee7;
+  --color-line-default: #d0d5dd;
   --color-line-strong: #c2cad7;
 
   --color-surface-page: #ffffff;
   --color-surface-muted: #f7f8fd;
   --color-surface-banner: #effdf6;
-  --color-surface-disabled: #dbe2ed;
+  --color-surface-disabled: #d0d5dd;
 
   --shadow-card: 0 2px 10px rgba(23, 33, 58, 0.04);
+  --shadow-control: 0 1px 2px rgba(16, 24, 40, 0.05);
   --shadow-floating: 0 18px 50px rgba(23, 33, 58, 0.08);
   --shadow-focus: 0 0 0 4px rgba(143, 242, 183, 0.45);
 
-  --radius-card: 20px;
+  --radius-button: 6px;
   --radius-control: 10px;
-  --radius-icon-button: 12px;
+  --radius-card: 20px;
   --radius-pill: 999px;
 
   --breakpoint-xs: 30rem;
@@ -59,23 +60,18 @@
   --text-label-size: 14px;
   --text-label-weight: 500;
 
-  --button-height-md: 56px;
-  --button-padding-x: 20px;
-  --button-radius: var(--radius-control);
-  --button-font-size: 16px;
-  --button-font-weight: 600;
-  --button-primary-bg: var(--color-brand-600);
-  --button-primary-bg-hover: var(--color-brand-700);
-  --button-primary-fg: #ffffff;
-  --button-secondary-bg: #ffffff;
-  --button-secondary-fg: var(--color-ink-950);
-  --button-secondary-border: var(--color-line-default);
-  --button-disabled-bg: var(--color-surface-disabled);
-  --button-disabled-fg: var(--color-ink-500);
+  --button-height-sm: 44px;
+  --button-height-lg: 60px;
+  --button-padding-x-sm: 18px;
+  --button-padding-x-lg: 28px;
+  --button-padding-y-sm: 10px;
+  --button-padding-y-lg: 16px;
+  --button-gap: 8px;
+  --button-font-size-sm: 16px;
+  --button-font-size-lg: 18px;
 
   --control-height-md: 56px;
   --control-padding-x: 18px;
-  --control-radius: var(--radius-control);
   --control-border: var(--color-line-default);
   --control-border-hover: var(--color-line-strong);
   --control-bg: #ffffff;
@@ -85,22 +81,20 @@
   --control-focus-border: #8ff2b7;
   --textarea-min-height: 280px;
 
-  --card-radius: var(--radius-card);
   --card-bg: var(--color-surface-muted);
   --card-banner-bg: var(--color-surface-banner);
   --card-padding: 28px;
 
-  --icon-button-size: 48px;
-  --icon-button-radius: var(--radius-icon-button);
-  --icon-button-border: var(--color-line-default);
-  --icon-button-bg: #ffffff;
-  --icon-button-fg: var(--color-ink-800);
+  --icon-button-size-sm: 32px;
+  --icon-button-size-md: 40px;
+  --icon-button-padding-sm: 6px;
+  --icon-button-padding-md: 10px;
 
   --progress-dot-width: 32px;
   --progress-dot-height: 8px;
   --progress-dot-radius: 999px;
   --progress-dot-active: var(--color-ink-950);
-  --progress-dot-inactive: #d0d6de;
+  --progress-dot-inactive: var(--color-line-default);
 }
 
 @media (width >= 48rem) {

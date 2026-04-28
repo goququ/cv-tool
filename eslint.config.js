@@ -20,7 +20,7 @@ const importSortGroups = [
 ]
 
 export default defineConfig([
-  globalIgnores(['coverage', 'dist', 'node_modules']),
+  globalIgnores(['coverage', 'dist', 'node_modules', 'storybook-static']),
   {
     files: ['**/*.{js,mjs,cjs}'],
     extends: [js.configs.recommended],

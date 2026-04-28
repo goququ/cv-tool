@@ -1,25 +1,22 @@
 import { cva } from 'class-variance-authority'
 
 export const buttonVariants = cva(
-  'inline-flex min-h-[var(--button-height-md)] items-center justify-center rounded-[var(--button-radius)] px-[var(--button-padding-x)] text-[length:var(--button-font-size)] font-[var(--button-font-weight)] transition-colors duration-150 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[var(--control-focus-ring)] disabled:pointer-events-none',
+  'relative inline-flex items-center justify-center border font-semibold rounded-button shadow-control transition duration-150 motion-safe:active:scale-[0.97] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[var(--control-focus-ring)] disabled:pointer-events-none disabled:border-surface-disabled disabled:bg-surface-disabled disabled:text-ink-500',
   {
     variants: {
       variant: {
         primary:
-          'bg-[var(--button-primary-bg)] text-[var(--button-primary-fg)] hover:bg-[var(--button-primary-bg-hover)]',
+          'border-brand-600 bg-brand-600 text-surface-page hover:bg-brand-700',
         secondary:
-          'border border-[var(--button-secondary-border)] bg-[var(--button-secondary-bg)] text-[var(--button-secondary-fg)] hover:border-[var(--color-line-strong)] hover:bg-[var(--color-surface-page)]',
+          'border-line-default bg-surface-page text-ink-800 hover:border-line-strong hover:bg-surface-muted',
         ghost:
-          'bg-transparent text-[var(--color-ink-800)] hover:bg-[var(--color-surface-muted)]',
+          'border-transparent bg-transparent text-ink-800 shadow-none hover:bg-surface-muted',
         subtle:
-          'bg-[var(--color-surface-muted)] text-[var(--color-ink-950)] hover:bg-[var(--color-line-soft)]',
-        disabled:
-          'bg-[var(--button-disabled-bg)] text-[var(--button-disabled-fg)]',
+          'border-transparent bg-surface-muted text-ink-950 shadow-none hover:bg-line-soft',
       },
       size: {
-        md: '',
-        sm: 'min-h-11 px-4 text-sm',
-        lg: 'min-h-14 px-6 text-base',
+        sm: 'min-h-[var(--button-height-sm)] px-[var(--button-padding-x-sm)] py-[var(--button-padding-y-sm)] text-[length:var(--button-font-size-sm)] leading-6 [&_svg]:size-5',
+        lg: 'min-h-[var(--button-height-lg)] px-[var(--button-padding-x-lg)] py-[var(--button-padding-y-lg)] text-[length:var(--button-font-size-lg)] leading-7 [&_svg]:size-6',
       },
       fullWidth: {
         true: 'w-full',
@@ -28,14 +25,14 @@ export const buttonVariants = cva(
     },
     defaultVariants: {
       variant: 'primary',
-      size: 'md',
+      size: 'sm',
       fullWidth: false,
     },
   },
 )
 
 export const inputVariants = cva(
-  'w-full rounded-[var(--control-radius)] border bg-[var(--control-bg)] px-[var(--control-padding-x)] text-[var(--control-fg)] outline-none transition-[border-color,box-shadow] duration-150 placeholder:text-[var(--control-placeholder)] hover:border-[var(--control-border-hover)] focus:border-[var(--control-focus-border)] focus:ring-4 focus:ring-[var(--control-focus-ring)] disabled:cursor-not-allowed disabled:bg-[var(--color-surface-muted)] disabled:text-[var(--color-ink-500)]',
+  'w-full rounded-control border bg-[var(--control-bg)] px-[var(--control-padding-x)] text-[var(--control-fg)] outline-none transition-[border-color,box-shadow] duration-150 placeholder:text-[var(--control-placeholder)] hover:border-[var(--control-border-hover)] focus:border-[var(--control-focus-border)] focus:ring-4 focus:ring-[var(--control-focus-ring)] disabled:cursor-not-allowed disabled:bg-surface-muted disabled:text-ink-500',
   {
     variants: {
       size: {
@@ -50,7 +47,7 @@ export const inputVariants = cva(
 )
 
 export const textareaVariants = cva(
-  'w-full rounded-[var(--control-radius)] border border-[var(--control-border)] bg-[var(--control-bg)] px-[var(--control-padding-x)] py-4 text-[var(--control-fg)] outline-none transition-[border-color,box-shadow] duration-150 placeholder:text-[var(--control-placeholder)] hover:border-[var(--control-border-hover)] focus:border-[var(--control-focus-border)] focus:ring-4 focus:ring-[var(--control-focus-ring)] disabled:cursor-not-allowed disabled:bg-[var(--color-surface-muted)] disabled:text-[var(--color-ink-500)]',
+  'w-full rounded-control border border-[var(--control-border)] bg-[var(--control-bg)] px-[var(--control-padding-x)] py-4 text-[var(--control-fg)] outline-none transition-[border-color,box-shadow] duration-150 placeholder:text-[var(--control-placeholder)] hover:border-[var(--control-border-hover)] focus:border-[var(--control-focus-border)] focus:ring-4 focus:ring-[var(--control-focus-ring)] disabled:cursor-not-allowed disabled:bg-surface-muted disabled:text-ink-500',
   {
     variants: {
       size: {
@@ -70,15 +67,14 @@ export const textareaVariants = cva(
 )
 
 export const cardVariants = cva(
-  'rounded-[var(--card-radius)] px-[var(--card-padding)] py-[var(--card-padding)]',
+  'rounded-card px-[var(--card-padding)] py-[var(--card-padding)]',
   {
     variants: {
       variant: {
-        preview: 'bg-[var(--card-bg)] text-[var(--color-ink-700)]',
-        banner: 'bg-[var(--card-banner-bg)] text-[var(--color-ink-950)]',
-        elevated:
-          'border border-[var(--color-line-soft)] bg-[var(--color-surface-page)] shadow-[var(--shadow-card)]',
-        soft: 'bg-[var(--color-surface-muted)]',
+        preview: 'bg-[var(--card-bg)] text-ink-700',
+        banner: 'bg-[var(--card-banner-bg)] text-ink-950',
+        elevated: 'border border-line-soft bg-surface-page shadow-card',
+        soft: 'bg-surface-muted',
       },
       padding: {
         md: '',
@@ -93,16 +89,17 @@ export const cardVariants = cva(
 )
 
 export const iconButtonVariants = cva(
-  'inline-flex size-[var(--icon-button-size)] items-center justify-center rounded-[var(--icon-button-radius)] border border-[var(--icon-button-border)] bg-[var(--icon-button-bg)] text-[var(--icon-button-fg)] transition-colors duration-150 hover:border-[var(--color-line-strong)] hover:bg-[var(--color-surface-muted)] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[var(--control-focus-ring)] disabled:pointer-events-none disabled:opacity-60',
+  'inline-flex items-center justify-center border bg-surface-page text-ink-800 rounded-button shadow-control transition duration-150 motion-safe:active:scale-[0.92] hover:border-line-strong hover:bg-surface-muted focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[var(--control-focus-ring)] disabled:pointer-events-none disabled:opacity-60',
   {
     variants: {
       size: {
-        md: '',
-        sm: 'size-10',
+        sm: 'size-[var(--icon-button-size-sm)] p-[var(--icon-button-padding-sm)] [&_svg]:size-4',
+        md: 'size-[var(--icon-button-size-md)] p-[var(--icon-button-padding-md)] [&_svg]:size-5',
       },
       tone: {
-        default: '',
-        ghost: 'border-transparent bg-transparent hover:border-transparent',
+        default: 'border-line-default',
+        ghost:
+          'border-transparent bg-transparent shadow-none hover:border-transparent',
       },
     },
     defaultVariants: {
