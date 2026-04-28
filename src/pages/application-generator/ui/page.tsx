@@ -8,10 +8,10 @@ import { Textarea } from '@/shared/ui/textarea/textarea'
 function ApplicationGeneratorPage() {
   return (
     <>
-      <section className="grid gap-10 py-8 lg:grid-cols-[minmax(0,1fr)_minmax(22rem,0.58fr)] lg:gap-11 lg:py-10">
+      <section className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(22rem,0.58fr)] lg:gap-11">
         <div className="space-y-6">
           <div className="space-y-3">
-            <h1 className="border-b border-[var(--color-line-soft)] pb-5 text-[length:var(--heading-display-size)] leading-[var(--heading-display-line)] font-[var(--heading-display-weight)] tracking-[-0.05em] text-[var(--color-ink-950)]">
+            <h1 className="border-line-soft font-display text-ink-950 border-b pb-5 text-[length:var(--heading-display-lg-size)] leading-[var(--heading-display-lg-line)] font-[var(--heading-display-weight)] tracking-[var(--heading-display-tracking)]">
               Product manager, Apple
             </h1>
           </div>
@@ -97,11 +97,11 @@ function ApplicationGeneratorPage() {
 
       <Card
         className="mt-2 flex flex-col items-center gap-8 text-center"
-        padding="lg"
+        padding="banner"
         variant="banner"
       >
         <div className="space-y-4">
-          <h2 className="text-[40px] font-semibold tracking-[-0.04em] text-[var(--color-ink-950)] sm:text-[56px]">
+          <h2 className="font-display text-ink-950 text-[length:var(--heading-display-md-size)] leading-[var(--heading-display-md-line)] font-[var(--heading-display-weight)] tracking-[var(--heading-display-tracking)]">
             Hit your goal
           </h2>
           <p className="mx-auto max-w-[34rem] text-[20px] leading-[1.55] text-[var(--color-ink-700)]">

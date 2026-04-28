@@ -27,7 +27,8 @@
 
   --color-surface-page: #ffffff;
   --color-surface-muted: #f7f8fd;
-  --color-surface-banner: #effdf6;
+  --color-surface-card: #f2f4f7;
+  --color-surface-banner: #edfcf2;
   --color-surface-disabled: #d0d5dd;
 
   --color-danger-50: #fef3f2;
@@ -45,7 +46,7 @@
   --radius-input: 6px;
   --radius-textarea: 8px;
   --radius-control: 10px;
-  --radius-card: 20px;
+  --radius-card: 12px;
   --radius-pill: 999px;
 
   --breakpoint-xs: 30rem;
@@ -53,13 +54,16 @@
 }
 
 :root {
-  --page-max-width: 1440px;
+  --page-max-width: 1248px;
   --page-padding-x: 24px;
   --page-padding-y: 20px;
-  --section-gap: 56px;
+  --section-gap: 48px;
 
-  --heading-display-size: 64px;
-  --heading-display-line: 1.02;
+  --heading-display-lg-size: 48px;
+  --heading-display-lg-line: 60px;
+  --heading-display-md-size: 36px;
+  --heading-display-md-line: 44px;
+  --heading-display-tracking: -0.02em;
   --heading-display-weight: 600;
 
   --text-body-size: 16px;
@@ -103,20 +107,18 @@
   --textarea-padding-y: 12px;
   --textarea-min-height: 236px;
 
-  --card-bg: var(--color-surface-muted);
+  --card-bg: var(--color-surface-card);
   --card-banner-bg: var(--color-surface-banner);
-  --card-padding: 28px;
+  --card-fg: var(--color-ink-600);
+  --card-padding-md: 24px;
+  --card-padding-lg: 40px;
+  --card-padding-banner-x: 64px;
+  --card-padding-banner-y: 54px;
 
   --icon-button-size-sm: 32px;
   --icon-button-size-md: 40px;
   --icon-button-padding-sm: 6px;
   --icon-button-padding-md: 10px;
-
-  --progress-dot-width: 32px;
-  --progress-dot-height: 8px;
-  --progress-dot-radius: 999px;
-  --progress-dot-active: var(--color-ink-950);
-  --progress-dot-inactive: var(--color-line-default);
 }
 
 @media (width >= 48rem) {
@@ -135,9 +137,11 @@
 
 @media (width < 48rem) {
   :root {
-    --heading-display-size: 48px;
-    --section-gap: 40px;
+    --heading-display-lg-size: 36px;
+    --heading-display-lg-line: 44px;
+    --heading-display-md-size: 28px;
+    --heading-display-md-line: 36px;
+    --section-gap: 32px;
     --textarea-min-height: 240px;
-    --progress-dot-width: 24px;
   }
 }

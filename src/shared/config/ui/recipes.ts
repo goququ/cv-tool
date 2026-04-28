@@ -86,27 +86,32 @@ export const fieldHelperVariants = cva(
   },
 )
 
-export const cardVariants = cva(
-  'rounded-card px-[var(--card-padding)] py-[var(--card-padding)]',
-  {
-    variants: {
-      variant: {
-        preview: 'bg-[var(--card-bg)] text-ink-700',
-        banner: 'bg-[var(--card-banner-bg)] text-ink-950',
-        elevated: 'border border-line-soft bg-surface-page shadow-card',
-        soft: 'bg-surface-muted',
-      },
-      padding: {
-        md: '',
-        lg: 'px-10 py-10',
-      },
+export const cardVariants = cva('rounded-card', {
+  variants: {
+    variant: {
+      preview: 'bg-[var(--card-bg)] text-[var(--card-fg)]',
+      banner: 'bg-[var(--card-banner-bg)] text-ink-950',
+      elevated: 'border border-line-soft bg-surface-page shadow-card',
+      soft: 'bg-surface-muted',
     },
-    defaultVariants: {
-      variant: 'elevated',
-      padding: 'md',
+    padding: {
+      md: 'p-[var(--card-padding-md)]',
+      lg: 'p-[var(--card-padding-lg)]',
+      banner:
+        'px-[var(--card-padding-banner-x)] py-[var(--card-padding-banner-y)]',
     },
   },
-)
+  defaultVariants: {
+    variant: 'preview',
+    padding: 'md',
+  },
+})
+
+export const pageContainerClass =
+  'mx-auto w-full max-w-[var(--page-max-width)] px-[var(--page-padding-x)] py-[var(--page-padding-y)]'
+
+export const textButtonClass =
+  'inline-flex items-center gap-2 rounded-button text-[16px] leading-6 font-semibold text-ink-700 transition duration-200 ease-out outline-none motion-safe:active:scale-[0.96] hover:text-ink-950 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--control-focus-ring)] disabled:pointer-events-none disabled:opacity-50'
 
 export const iconButtonVariants = cva(
   'inline-flex items-center justify-center border bg-surface-page text-ink-800 rounded-button shadow-control transition duration-150 motion-safe:active:scale-[0.92] hover:border-line-strong hover:bg-surface-muted focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[var(--control-focus-ring)] disabled:pointer-events-none disabled:opacity-60',
@@ -129,11 +134,11 @@ export const iconButtonVariants = cva(
   },
 )
 
-export const progressDotsVariants = cva('inline-flex items-center gap-2', {
+export const progressDotsVariants = cva('inline-flex items-center', {
   variants: {
     size: {
-      md: '',
-      sm: 'gap-1.5',
+      sm: 'gap-1',
+      md: 'gap-2',
     },
   },
   defaultVariants: {
@@ -142,15 +147,20 @@ export const progressDotsVariants = cva('inline-flex items-center gap-2', {
 })
 
 export const progressDotItemVariants = cva(
-  'h-[var(--progress-dot-height)] w-[var(--progress-dot-width)] rounded-[var(--progress-dot-radius)] transition-colors duration-150',
+  'rounded-[4px] transition-colors duration-150',
   {
     variants: {
+      size: {
+        sm: 'h-2 w-2',
+        md: 'h-2 w-8',
+      },
       state: {
-        active: 'bg-[var(--progress-dot-active)]',
-        inactive: 'bg-[var(--progress-dot-inactive)]',
+        active: 'bg-ink-950',
+        inactive: 'bg-ink-950/24',
       },
     },
     defaultVariants: {
+      size: 'md',
       state: 'inactive',
     },
   },

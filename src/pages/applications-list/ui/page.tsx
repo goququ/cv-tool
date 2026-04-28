@@ -4,23 +4,20 @@ import { Card } from '@/shared/ui/card/card'
 
 function ApplicationsListPage() {
   return (
-    <section className="space-y-8 py-8 lg:py-10">
-      <div className="flex items-end justify-between gap-6 border-b border-[var(--color-line-soft)] pb-6">
-        <h1 className="text-[length:var(--heading-display-size)] leading-[var(--heading-display-line)] font-[var(--heading-display-weight)] tracking-[-0.05em] text-[var(--color-ink-950)]">
+    <section className="space-y-8">
+      <div className="border-line-soft mb-6 flex items-center justify-between gap-6 border-b pb-5">
+        <h1 className="font-display text-ink-950 text-[length:var(--heading-display-lg-size)] leading-[var(--heading-display-lg-line)] font-[var(--heading-display-weight)] tracking-[var(--heading-display-tracking)]">
           Applications
         </h1>
 
-        <Button className="min-w-[178px]" size="lg">
-          <span className="inline-flex items-center gap-3">
-            <PlusIcon aria-hidden="true" className="size-5" />
-            Create New
-          </span>
+        <Button leadingIcon={<PlusIcon aria-hidden="true" />} size="sm">
+          Create New
         </Button>
       </div>
 
       <div className="grid gap-6 lg:grid-cols-2">
         <Card variant="preview">
-          <p className="text-[20px] leading-[1.7] text-[var(--color-ink-700)]">
+          <p className="text-ink-700 text-[20px] leading-[1.7]">
             Dashboard route shell is now active. Real applications grid,
             actions, and goal banner will be completed in the next UI phases.
           </p>
