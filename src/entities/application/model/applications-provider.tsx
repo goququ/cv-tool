@@ -9,8 +9,8 @@ import {
 import {
   ApplicationClient,
   LocalStorageApplicationClient,
-} from '@/entities/application/model/application-client'
-import type { JobApplication } from '@/entities/application/model/types'
+} from './application-client'
+import type { JobApplication } from './types'
 import {
   ApplicationsContext,
   type ApplicationsContextValue,

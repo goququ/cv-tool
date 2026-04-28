@@ -1,6 +1,6 @@
 import { createContext, useContext } from 'react'
 
-import type { JobApplication } from '@/entities/application/model/types'
+import type { JobApplication } from './types'
 
 type ApplicationsContextValue = {
   applications: JobApplication[]

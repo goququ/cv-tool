@@ -2,9 +2,9 @@ import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { beforeEach, describe, expect, it } from 'vitest'
 
-import { ApplicationClient } from '@/entities/application/model/application-client'
-import type { JobApplication } from '@/entities/application/model/types'
+import { ApplicationClient } from './application-client'
 import { ApplicationsProvider } from './applications-provider'
+import type { JobApplication } from './types'
 import { useApplications } from './use-applications'
 
 const applicationFixture: JobApplication = {

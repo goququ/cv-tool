@@ -4,8 +4,9 @@ import {
   RouterProvider,
 } from '@tanstack/react-router'
 import { render, screen } from '@testing-library/react'
-import { describe, expect, it } from 'vitest'
+import { beforeEach, describe, expect, it } from 'vitest'
 
+import { ApplicationsProvider } from '@/entities/application/model/applications-provider'
 import { routeTree } from './app-router'
 
 function renderRouter(initialLocation: string) {
@@ -16,10 +17,18 @@ function renderRouter(initialLocation: string) {
     routeTree,
   })
 
-  return render(<RouterProvider router={router} />)
+  return render(
+    <ApplicationsProvider>
+      <RouterProvider router={router} />
+    </ApplicationsProvider>,
+  )
 }
 
 describe('app router', () => {
+  beforeEach(() => {
+    localStorage.clear()
+  })
+
   it('renders the dashboard route on /', async () => {
     renderRouter('/')
 
