@@ -75,10 +75,8 @@ export const Banner: Story = {
       <Card {...args}>
         <div className="mx-auto flex w-[480px] flex-col items-center gap-8 text-center">
           <div className="flex flex-col items-center gap-4">
-            <h2 className="font-display text-ink-950 text-[length:var(--heading-display-md-size)] leading-[var(--heading-display-md-line)] font-[var(--heading-display-weight)] tracking-[var(--heading-display-tracking)]">
-              Hit your goal
-            </h2>
-            <p className="text-ink-600 text-[18px] leading-[28px]">
+            <h2 className="text-display-md text-ink-950">Hit your goal</h2>
+            <p className="text-lead text-ink-600">
               Generate and send out couple more job applications today to get
               hired faster
             </p>
@@ -90,9 +88,7 @@ export const Banner: Story = {
 
           <div className="flex flex-col items-center gap-2">
             <ProgressDots current={3} total={5} />
-            <span className="text-ink-600 text-[18px] leading-[28px]">
-              3 out of 5
-            </span>
+            <span className="text-lead text-ink-600">3 out of 5</span>
           </div>
         </div>
       </Card>
@@ -108,7 +104,7 @@ export const PreviewLetter: Story = {
   render: (args) => (
     <div className="w-[544px]">
       <Card {...args} className="flex h-[600px] flex-col justify-between gap-2">
-        <p className="text-ink-600 text-[18px] leading-[28px]">
+        <p className="text-lead text-ink-600">
           Your personalized job application will appear here…
         </p>
         <div className="flex justify-end">

@@ -26,13 +26,11 @@ function ApplicationLetterPreview({
           {isGenerating ? (
             <PreviewSkeleton />
           ) : letter !== undefined ? (
-            <p className="text-ink-950 text-[18px] leading-[28px] whitespace-pre-line">
+            <p className="text-lead text-ink-950 whitespace-pre-line">
               {letter}
             </p>
           ) : (
-            <p className="text-ink-600 text-[18px] leading-[28px]">
-              {placeholder}
-            </p>
+            <p className="text-lead text-ink-600">{placeholder}</p>
           )}
         </div>
         {letter !== undefined && !isGenerating ? (

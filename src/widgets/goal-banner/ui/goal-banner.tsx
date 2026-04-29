@@ -21,10 +21,8 @@ function GoalBanner({ onCreateNew }: GoalBannerProps = {}) {
     <Card padding="banner" variant="banner">
       <div className="mx-auto flex w-full max-w-[480px] flex-col items-center gap-8 text-center">
         <div className="flex flex-col items-center gap-4">
-          <h2 className="font-display text-ink-950 text-[length:var(--heading-display-md-size)] leading-[var(--heading-display-md-line)] font-[var(--heading-display-weight)] tracking-[var(--heading-display-tracking)]">
-            Hit your goal
-          </h2>
-          <p className="text-ink-600 text-[18px] leading-[28px]">
+          <h2 className="text-display-md text-ink-950">Hit your goal</h2>
+          <p className="text-lead text-ink-600">
             Generate and send out couple more job applications today to get
             hired faster
           </p>
@@ -49,7 +47,7 @@ function GoalBanner({ onCreateNew }: GoalBannerProps = {}) {
 
         <div className="flex flex-col items-center gap-2">
           <ProgressDots current={count} total={total} />
-          <span className="text-ink-600 text-[18px] leading-[28px]">
+          <span className="text-lead text-ink-600">
             {`${String(count)} out of ${String(total)}`}
           </span>
         </div>

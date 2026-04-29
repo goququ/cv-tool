@@ -62,9 +62,7 @@ function ApplicationGeneratorPage() {
       >
         <div className="flex h-full min-h-[0] flex-col gap-4">
           <header className="border-line-soft flex min-h-[3.25rem] shrink-0 items-end border-b pb-3">
-            <h1 className="font-display text-ink-950 text-[length:var(--heading-display-lg-size)] leading-[var(--heading-display-lg-line)] font-[var(--heading-display-weight)] tracking-[var(--heading-display-tracking)]">
-              {headingTitle}
-            </h1>
+            <h1 className="text-display-lg text-ink-950">{headingTitle}</h1>
           </header>
 
           <div className="flex min-h-0 flex-1 flex-col gap-6">
@@ -76,10 +74,7 @@ function ApplicationGeneratorPage() {
             />
 
             {status === 'error' ? (
-              <p
-                className="text-danger-700 text-[length:var(--text-helper-size)] leading-[var(--text-helper-line)]"
-                role="alert"
-              >
+              <p className="text-helper text-danger-700" role="alert">
                 Something went wrong while generating the letter. Please try
                 again.
               </p>

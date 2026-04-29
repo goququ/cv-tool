@@ -69,9 +69,7 @@ export const InHeaderRow: Story = {
   parameters: { layout: 'centered' },
   render: () => (
     <div className="flex items-center gap-4">
-      <span className="text-ink-600 text-[18px] leading-[28px]">
-        3/5 applications generated
-      </span>
+      <span className="text-lead text-ink-600">3/5 applications generated</span>
       <ProgressDots current={3} size="sm" total={5} />
     </div>
   ),

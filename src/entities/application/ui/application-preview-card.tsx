@@ -18,7 +18,7 @@ function ApplicationPreviewCard({
       variant="preview"
     >
       <div className="relative min-h-0 flex-1">
-        <p className="text-ink-600 h-full overflow-hidden text-[18px] leading-[28px] whitespace-pre-line">
+        <p className="text-lead text-ink-600 h-full overflow-hidden whitespace-pre-line">
           {letter}
         </p>
         <div

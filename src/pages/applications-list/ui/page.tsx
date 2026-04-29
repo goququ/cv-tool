@@ -14,9 +14,7 @@ function ApplicationsListPage() {
   return (
     <section className="flex flex-col gap-6 lg:gap-12">
       <div className="border-line-soft flex items-center justify-between gap-6 border-b pb-4">
-        <h1 className="font-display text-ink-950 text-[length:var(--heading-display-lg-size)] leading-[var(--heading-display-lg-line)] font-[var(--heading-display-weight)] tracking-[var(--heading-display-tracking)]">
-          Applications
-        </h1>
+        <h1 className="text-display-lg text-ink-950">Applications</h1>
 
         <Link aria-label="Create new application" to="/new">
           <IconButton

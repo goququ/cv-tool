@@ -26,7 +26,7 @@ function Header({ showHomeButton }: HeaderProps) {
 
       <div className="flex items-center gap-5">
         <div className="flex items-center gap-4">
-          <p className="text-ink-600 text-[18px] leading-[28px]">
+          <p className="text-lead text-ink-600">
             {`${String(count)}/${String(total)}`}
             <span className="hidden sm:inline"> applications generated</span>
           </p>

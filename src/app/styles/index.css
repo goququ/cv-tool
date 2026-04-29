@@ -173,3 +173,31 @@
     opacity: 0.18;
   }
 }
+
+@layer utilities {
+  .text-lead {
+    font-size: var(--text-lead-size);
+    line-height: var(--text-lead-line);
+  }
+
+  .text-helper {
+    font-size: var(--text-helper-size);
+    line-height: var(--text-helper-line);
+  }
+
+  .text-display-lg {
+    font-family: var(--font-display);
+    font-size: var(--heading-display-lg-size);
+    font-weight: var(--heading-display-weight);
+    letter-spacing: var(--heading-display-tracking);
+    line-height: var(--heading-display-lg-line);
+  }
+
+  .text-display-md {
+    font-family: var(--font-display);
+    font-size: var(--heading-display-md-size);
+    font-weight: var(--heading-display-weight);
+    letter-spacing: var(--heading-display-tracking);
+    line-height: var(--heading-display-md-line);
+  }
+}
