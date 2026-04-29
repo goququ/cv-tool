@@ -56,25 +56,23 @@ function PreviewSkeleton() {
   return (
     <div
       aria-label="Generating letter"
-      className="flex flex-col gap-3"
+      className="flex h-full items-center justify-center"
       role="status"
     >
-      {[
-        'w-1/2',
-        'w-full',
-        'w-11/12',
-        'w-10/12',
-        'w-full',
-        'w-9/12',
-        'w-11/12',
-        'w-8/12',
-      ].map((widthClass, index) => (
+      <div className="relative flex h-24 w-24 items-center justify-center">
         <span
           aria-hidden="true"
-          className={`bg-ink-950/10 h-4 animate-pulse rounded-full ${widthClass}`}
-          key={index}
+          className="preview-loader-shadow absolute top-[calc(50%+26px)] left-1/2 h-6 w-14 -translate-x-1/2 rounded-full"
         />
-      ))}
+        <span
+          aria-hidden="true"
+          className="preview-loader-shadow preview-loader-shadow-secondary absolute top-[calc(50%+26px)] left-1/2 h-5 w-11 -translate-x-1/2 rounded-full"
+        />
+        <span
+          aria-hidden="true"
+          className="preview-loader-orb absolute top-1/2 left-1/2 h-20 w-20 -translate-x-1/2 -translate-y-1/2 rounded-full"
+        />
+      </div>
     </div>
   )
 }
