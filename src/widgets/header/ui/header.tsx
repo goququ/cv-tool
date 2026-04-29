@@ -12,7 +12,7 @@ type HeaderProps = {
 }
 
 function Header({ showHomeButton }: HeaderProps) {
-  const { count, goalReached, total } = useApplicationsProgress()
+  const { goalReached, total, visibleCount } = useApplicationsProgress()
 
   return (
     <header className="flex items-center justify-between gap-6">
@@ -27,7 +27,7 @@ function Header({ showHomeButton }: HeaderProps) {
       <div className="flex items-center gap-5">
         <div className="flex items-center gap-4">
           <p className="text-lead text-ink-600">
-            {`${String(count)}/${String(total)}`}
+            {`${String(visibleCount)}/${String(total)}`}
             <span className="hidden sm:inline"> applications generated</span>
           </p>
 
@@ -38,7 +38,7 @@ function Header({ showHomeButton }: HeaderProps) {
               role="img"
             />
           ) : (
-            <ProgressDots current={count} size="sm" total={total} />
+            <ProgressDots current={visibleCount} size="sm" total={total} />
           )}
         </div>
 

@@ -11,7 +11,7 @@ type GoalBannerProps = {
 }
 
 function GoalBanner({ onCreateNew }: GoalBannerProps = {}) {
-  const { count, goalReached, total } = useApplicationsProgress()
+  const { goalReached, total, visibleCount } = useApplicationsProgress()
 
   if (goalReached) {
     return null
@@ -46,9 +46,9 @@ function GoalBanner({ onCreateNew }: GoalBannerProps = {}) {
         )}
 
         <div className="flex flex-col items-center gap-2">
-          <ProgressDots current={count} total={total} />
+          <ProgressDots current={visibleCount} total={total} />
           <span className="text-lead text-ink-600">
-            {`${String(count)} out of ${String(total)}`}
+            {`${String(visibleCount)} out of ${String(total)}`}
           </span>
         </div>
       </div>
